@@ -7,6 +7,9 @@ $tempDir = New-Item -ItemType Directory -Path (Join-Path $env:TEMP "UniversalIns
 
 $packageArray = $packages -split ","
 
+:: DEBUG
+$packageArray = @("notepadplusplus-LATEST")
+
 foreach ($package in $packageArray) {
     $zipPath = Join-Path $tempDir.FullName "$package.zip"
     $url = $baseInstallerUrl + $package + "_installer.zip"
